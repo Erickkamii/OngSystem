@@ -5,5 +5,9 @@ import com.inter.interdisciplinar.dto.UserDto;
 
 public interface AuthService {
 
-    UserDto signupClient(SignupRequestDTO signupRequestDTO);
+    UserDto signupVolunteer(SignupRequestDTO signupRequestDTO);
+
+    Boolean presentByEmail(String email);
+
+    UserDto signupOng(SignupRequestDTO signupRequestDTO);
 }
