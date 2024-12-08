@@ -1,6 +1,6 @@
 package com.inter.interdisciplinar.enums;
 
-public class UserRole {
+public enum UserRole {
     VOLUNTEER,
     ONG,
 }

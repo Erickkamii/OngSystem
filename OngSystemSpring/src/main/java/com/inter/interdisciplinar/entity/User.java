@@ -1,5 +1,6 @@
 package com.inter.interdisciplinar.entity;
 
+import com.inter.interdisciplinar.dto.UserDto;
 import com.inter.interdisciplinar.enums.UserRole;
 
 import jakarta.persistence.Entity;
@@ -30,4 +31,13 @@ public class User {
     
     private UserRole role;
     
+    public UserDto getDto(){
+        UserDto userDto = new UserDto();
+        userDto.setId(id);
+        userDto.setName(name);
+        userDto.setEmail(email);
+        userDto.setRole(role);
+
+        return userDto;
+    }
 }
