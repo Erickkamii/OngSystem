@@ -38,7 +38,7 @@ export class SignupOngComponent {
     this.validateForm = this.fb.group({
       email: [null, [Validators.email, Validators.required]],
       name: [null, [Validators.required]],
-      lastname: [null, [Validators.required]],
+      address: [null, [Validators.required]],
       phone: [null],
       password: [null, [Validators.required]],
       checkPassword: [null, [Validators.required]],
@@ -54,7 +54,7 @@ export class SignupOngComponent {
       return;
     }
 
-    this.authService.registerVolunteer(this.validateForm.value).subscribe(
+    this.authService.registerOng(this.validateForm.value).subscribe(
       (res) => {
         // Exibe mensagem de sucesso
         this.snackBar.open('Cadastro realizado com sucesso!', 'Fechar', {

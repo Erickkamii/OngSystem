@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card">
-    <h2>Cadastro de Voluntário</h2>
+    <h2>Cadastro de ONG</h2>
     <form [formGroup]="validateForm" (ngSubmit)="submitForm()">
       <mat-form-field appearance="fill">
         <mat-label>Nome</mat-label>
@@ -11,10 +11,10 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Sobrenome</mat-label>
-        <input matInput formControlName="lastname" placeholder="Digite seu sobrenome" />
-        <mat-error *ngIf="validateForm.get('lastname')?.hasError('required')">
-          Sobrenome é obrigatório.
+        <mat-label>Endereço</mat-label>
+        <input matInput formControlName="address" placeholder="Digite seu endereço" />
+        <mat-error *ngIf="validateForm.get('address')?.hasError('required')">
+          Endereço é obrigatório.
         </mat-error>
       </mat-form-field>
 
