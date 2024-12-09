@@ -5,6 +5,7 @@ import { AppComponent } from './app.component'; // Componente standalone
 
 export const routes: Routes = [
   { path: 'register_volunteer', component: SignupVolunteerComponent },
+  { path: 'register_ong', component: SignupOngComponent },
   { path: '', component: AppComponent },  // Usando AppComponent como rota inicial
   { path: 'ong', loadChildren: () => import('./ong/ong.module').then(m => m.OngModule) },
 ];

@@ -10,9 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
 @Component({
-  selector: 'app-signup-volunteer',
+  selector: 'app-signup-ong',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -22,10 +21,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RouterModule,
     CommonModule
   ],
-  templateUrl: './signup-volunteer.component.html',
-  styleUrls: ['./signup-volunteer.component.css']
+  templateUrl: './signup-ong.component.html',
+  styleUrl: './signup-ong.component.css'
 })
-export class SignupVolunteerComponent {
+export class SignupOngComponent {
   validateForm!: FormGroup;
 
   constructor(
