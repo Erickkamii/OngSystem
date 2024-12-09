@@ -26,8 +26,11 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
-  ) {}
+    private router: Router,
+  ) {
+
+
+  }
 
   ngOnInit() {
     this.validateForm = this.fb.group({
@@ -37,7 +40,7 @@ export class LoginComponent {
   }
 
   submitForm() {
-    this.authService.login(this.validateForm.get('userName')!.value, this.validateForm.get('password')!.value)
+    this.authService.login(this.validateForm.get(['userName'])!.value, this.validateForm.get(['password'])!.value)
       .subscribe(res => {
         console.log(res);
       }, error => {
