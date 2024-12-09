@@ -62,8 +62,7 @@ export class SignupOngComponent {
           panelClass: ['success-snackbar'],
         });
 
-        // Não redireciona para o login
-        // this.router.navigateByUrl('/login'); // Removido o redirecionamento
+        this.router.navigateByUrl('/login'); // Removido o redirecionamento
       },
       (error) => {
         // Exibe mensagem de erro, se houver

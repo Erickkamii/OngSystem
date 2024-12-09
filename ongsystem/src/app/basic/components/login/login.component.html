@@ -1,1 +1,46 @@
-<p>login works!</p>
+<div class="bg">
+  <div class="parent">
+    <div class="child">
+      <div class="imgDiv">
+        <h1 style="margin-left: 100px;">Login</h1>
+      </div>
+      <form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput
+              id="userName"
+              type="text"
+              formControlName="userName"
+              placeholder="Email"
+            />
+            <mat-error *ngIf="validateForm.get('userName')?.invalid && validateForm.get('userName')?.touched">
+              Insira seu email
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Senha</mat-label>
+            <input matInput
+              id="password"
+              type="password"
+              formControlName="password"
+              placeholder="Senha"
+            />
+            <mat-error *ngIf="validateForm.get('password')?.invalid && validateForm.get('password')?.touched">
+              Insira sua senha
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" class="login-form-button">
+          Login
+        </button>
+
+        <p>Ou <a routerLink="/register">Cadastre-se agora!</a></p>
+      </form>
+    </div>
+  </div>
+</div>

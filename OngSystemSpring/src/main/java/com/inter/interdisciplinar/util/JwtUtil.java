@@ -18,7 +18,7 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtUtil {
 
-    public static final String SECRET = "interdisciplinarsecret";
+    public static final String SECRET = "Z3JvRnRqdXVkNGp1djVnRkxmSlFsZnZkaHdnZlFwRkU";
 
     private String createToken(Map<String, Object> claims, String userName ){
         return Jwts.builder()

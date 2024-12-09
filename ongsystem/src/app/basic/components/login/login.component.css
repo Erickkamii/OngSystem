@@ -1,0 +1,95 @@
+/* Background and container styles */
+.bg {
+  background-color: #f0f4f8; /* Light grayish-blue */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Form and input styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form elements */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d9d9d9; /* Light gray border */
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #1890ff; /* Blue border on focus */
+  outline: none;
+}
+
+/* Button styles */
+button.login-form-button {
+  background-color: #1890ff; /* Primary blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.login-form-button:hover {
+  background-color: #40a9ff; /* Lighter blue on hover */
+}
+
+/* Link styles */
+a {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Title styles */
+h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #333333; /* Dark gray text */
+  margin-bottom: 20px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 480px) {
+  .child {
+    padding: 15px 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button.login-form-button {
+    font-size: 14px;
+  }
+}
