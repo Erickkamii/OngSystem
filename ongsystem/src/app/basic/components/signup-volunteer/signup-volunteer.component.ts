@@ -10,7 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
 @Component({
   selector: 'app-signup-volunteer',
   standalone: true,
@@ -23,51 +22,55 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CommonModule
   ],
   templateUrl: './signup-volunteer.component.html',
-  styleUrl: './signup-volunteer.component.css'
+  styleUrls: ['./signup-volunteer.component.css'] // Corrigido para 'styleUrls'
 })
 export class SignupVolunteerComponent {
+  validateForm!: FormGroup;
 
-    validateForm!: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) {}
 
-    constructor(private fb: FormBuilder,
-      private authService: AuthService,
-      private snackBar: MatSnackBar,
-      private router: Router){}
+  ngOnInit(): void {
+    this.validateForm = this.fb.group({
+      email: [null, [Validators.email, Validators.required]],
+      name: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
+      phone: [null],
+      password: [null, [Validators.required]],
+      checkPassword: [null, [Validators.required]],
+    });
+  }
 
-      ngOnInit(): void{
-        this.validateForm = this.fb.group({
-          email: [null, [Validators.email, Validators.required]],
-          name: [null, [Validators.required]],
-          lastname: [null, [Validators.required]],
-          phone: [null],
-          password: [null, [Validators.required]],
-          checkPassword: [null, [Validators.required]],
-        })
+  submitForm(): void {
+    if (this.validateForm.invalid) {
+      this.snackBar.open('Formulário inválido. Verifique os campos.', 'Fechar', {
+        duration: 5000,
+        panelClass: ['error-snackbar'],
+      });
+      return;
+    }
+
+    this.authService.registerVolunteer(this.validateForm.value).subscribe(
+      (res) => {
+        this.snackBar.open('Cadastro realizado com sucesso!', 'Fechar', {
+          duration: 5000,
+          panelClass: ['success-snackbar'],
+        });
+        this.router.navigateByUrl('/login');
+      },
+      (error) => {
+        // Verifica se o erro tem uma mensagem personalizada
+        const errorMessage =
+          error?.error?.message || 'Erro desconhecido ao tentar cadastrar.';
+        this.snackBar.open(errorMessage, 'Fechar', {
+          duration: 5000,
+          panelClass: ['error-snackbar'],
+        });
       }
-
-      submitForm(): void {
-        if (this.validateForm.invalid) {
-          this.snackBar.open('Formulário inválido. Verifique os campos.', 'Fechar', {
-            duration: 5000,
-            panelClass: ['error-snackbar']
-          });
-          return;
-        }
-
-        this.authService.registerVolunteer(this.validateForm.value).subscribe(
-          (res) => {
-            this.snackBar.open('Cadastro realizado com sucesso!', 'Fechar', {
-              duration: 5000,
-              panelClass: ['success-snackbar']
-            });
-            this.router.navigateByUrl('/login');
-          },
-          (error) => {
-            this.snackBar.open(`Erro: ${error.error}`, 'Fechar', {
-              duration: 5000,
-              panelClass: ['error-snackbar']
-            });
-          }
-        );
-      }
+    );
+  }
 }

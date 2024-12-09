@@ -1,88 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
-/* Reset de estilos */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Background and layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #e3f2fd; /* Azul claro */
+  padding: 20px;
 }
 
-/* Fonte padrão */
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: #333;
-  background-color: #f5f5f5;
-  line-height: 1.6;
+/* Card design */
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff; /* Branco */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #bbdefb; /* Azul suave */
 }
 
-/* Links */
-a {
-  color: #1976d2; /* Azul padrão do Angular Material */
-  text-decoration: none;
+/* Form field styles */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* Botões */
-button {
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button.primary {
-  background-color: #1976d2;
-  color: white;
-}
-
-button.primary:hover {
-  background-color: #155a9c;
-}
-
-/* Inputs */
 input, textarea, select {
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid #bbdefb; /* Azul suave */
   border-radius: 4px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: #1976d2;
+  border-color: #1976d2; /* Azul principal */
   outline: none;
 }
 
-/* Contêiner principal */
-.app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-/* Cabeçalho */
-header {
-  background-color: #1976d2;
+.mat-button {
+  text-transform: none;
+  background-color: #1976d2; /* Azul principal */
   color: white;
-  padding: 1rem;
-  text-align: center;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-header h1 {
-  font-size: 2rem;
+.mat-button:hover {
+  background-color: #1565c0; /* Azul mais escuro */
 }
 
-/* Rodapé */
+.mat-button.cancel {
+  background-color: #ffffff; /* Branco */
+  color: #1976d2; /* Azul principal */
+  border: 1px solid #1976d2;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.mat-button.cancel:hover {
+  background-color: #e3f2fd; /* Azul claro */
+}
+
+/* Headings and text */
+h1, h2, h3, h4, h5, h6 {
+  color: #1976d2; /* Azul principal */
+}
+
+p {
+  color: #555; /* Cinza escuro */
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #333;
+  background-color: #1976d2; /* Azul principal */
   color: white;
   font-size: 0.875rem;
 }

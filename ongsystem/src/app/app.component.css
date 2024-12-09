@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: #bb2929; /* Cor de fundo personalizada */
+  background-color: #1976d2; /* Azul principal */
   color: white;
 }
 
@@ -27,9 +27,10 @@
 /* Conteúdo Principal */
 .main-content {
   padding: 20px;
-  background-color: #f4f4f4; /* Fundo claro */
+  background-color: #e3f2fd; /* Fundo azul claro */
   min-height: calc(100vh - 64px); /* Altura ajustada para cobrir a tela menos o header */
 }
+
 /* Garante que o cabeçalho ocupe toda a largura */
 .full-width {
   width: 100%;
